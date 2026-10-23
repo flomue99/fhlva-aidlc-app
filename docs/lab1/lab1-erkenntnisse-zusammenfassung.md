@@ -38,8 +38,10 @@ Die wichtigsten Risiken aus der Architekturanalyse:
 1. **Ein Ausfall des Tracking-Service löst Warnungen auf.** Ist er nicht erreichbar, rechnet der Scheduler mit 0 Drinks und setzt alle offenen Warnungen auf `RESOLVED`. Ohne `INTERNAL_API_KEY` passiert das dauerhaft und ohne Fehlermeldung.
 2. **Kein Lock bei mehreren Replicas.** Laut Migration V2 ist ein Advisory Lock vorgesehen, im Code fehlt er. Mehrere Replicas können daher doppelte `ACTIVE`-Warnungen anlegen, die den User danach dauerhaft blockieren.
 3. **`RestTemplate` ohne Timeout.** Ein hängender Tracking-Service blockiert den einzigen Scheduler-Thread, ohne dass ein Fehler geloggt wird.
-4. **Keine Metriken.** `/actuator/prometheus` ist freigegeben, aber die Micrometer-Dependency fehlt, und der Endpunkt verlangt zusätzlich ein JWT.
-5. Kleinere Punkte: Eine bestätigte Warnung wird sofort neu angelegt, solange der User über dem Limit liegt; ein `sub`, der keine UUID ist, oder ungültige Paging-Parameter führen zu 500 statt 400.
+4. **Keine Metriken.** `/actuator/prometheus` ist freigegeben, aber die Prometheus-Dependency fehlt, und der Endpunkt verlangt zusätzlich ein JWT.
+5. Kleinere Punkte:
+   - Bestätigt ein User eine Warnung, wird sie sofort wieder neu angelegt, solange er weiterhin über dem Limit liegt.
+   - Fehlerhafte Eingaben liefern einen Serverfehler (500) statt einer Fehlermeldung „ungültige Anfrage“ (400). Das passiert, wenn die User-ID im JWT (das Feld `sub`) keine gültige UUID ist oder die Paging-Parameter ungültig sind.
 
 ## 4. Ausblick Lab 2: SLIs/SLOs (~0,5 min)
 
@@ -49,7 +51,7 @@ Die wichtigsten Risiken aus der Architekturanalyse:
   - Latenz **95 % ≤ 300 ms**
   - **Aktualität**: letzter erfolgreicher Lauf ≤ 15 min, 99 % der Zeit
   - **Abdeckung**: 99 % der User-Auswertungen mit vollständigen Daten
-- Voraussetzung: Micrometer-Dependency, eigene Scheduler-Metriken, Timeouts, und die Auswertung bei Fehlern überspringen statt mit 0 zu rechnen
+- Voraussetzung: Prometheus-Dependency, eigene Scheduler-Metriken, Timeouts, und die Auswertung bei Fehlern überspringen statt mit 0 zu rechnen
 
 ---
 
