@@ -1,7 +1,6 @@
 # Lab 1 – Erkenntnisse (Gruppe „Meds“, health-notification-service)
 
 > Kurzpräsentation, max. 5 Minuten. Zeitangaben pro Abschnitt als Orientierung.
-> Details: [Architektur](health-notification-service-architektur.md) · [SLIs/SLOs](health-notification-service-slo-metriken.md) · [Setup Insights](setup_insights.md) · [Windows/Podman Troubleshooting](windows-podman-troubleshooting.md)
 
 **Lab-1-Aufgabe:** App lokal (podman compose, minikube) und auf Azure zum Laufen bringen, Probleme notieren und zusammenfassen, was unser Service macht.
 
@@ -18,15 +17,17 @@
 
 ## 2. Deployment-Probleme und Lösungen (~2 min)
 
-| # | Problem | Ursache | Lösung |
-|---|---|---|---|
-| 1 | Podman-Machine wird nie „running“ / `Wsl/Service/E_UNEXPECTED` | WSL 2.2.4 zu alt für das Fedora-44-Image von Podman 6.1 | `wsl --update`, Machine neu anlegen (`--rootful`) |
-| 2 | Container im Devcontainer haben kein Netzwerk | Podman-in-Podman: nftables kollidiert mit der äußeren VM | `firewall_driver = "iptables"` in `.devcontainer/containers.conf` |
-| 3 | `aardvark-dns` kann nicht an `192.168.49.1:53` binden (nach Reboot) | Veralteter Podman-State unter `/run` mit verwaistem **minikube**-Netz; aardvark bindet an *alle* Gateways | `rm -rf /run/libpod /run/containers/storage /run/containers/networks`, vor einem Reboot `minikube delete` |
-| 4 | `toomanyrequests` (Docker Hub) / `429` (Maven Central) | Rate-Limits pro IP; 4 Spring-Services laden parallel alle Dependencies | `podman login`, Services nacheinander bauen (`COMPOSE_PARALLEL_LIMIT=1`) |
-| 5 | minikube nutzt weiter Docker Desktop | Treiber ist pro minikube-Profil gespeichert | `minikube delete`, dann `--driver=podman` |
-| 6 | `.sh`-Skripte laufen nicht unter PowerShell | `bash` zeigt auf WSL-Debian ohne minikube/kubectl/helm | Git Bash mit vollem Pfad aufrufen |
-| 7 | Phantom-Diffs unter Windows | CRLF/LF-Konvertierung | `.gitattributes` + `core.autocrlf input` |
+**Stand:** Lokal läuft der komplette Stack, sowohl per `podman compose` im Devcontainer als auch auf minikube. Das Azure-Deployment ist noch offen.
+
+| Problem | Lösung |
+|---|---|
+| Podman startet unter Windows nicht | `wsl --update`, Machine neu anlegen (`--rootful`) |
+| Container im Devcontainer ohne Netzwerk | `firewall_driver = "iptables"` in `.devcontainer/containers.conf` |
+| DNS-Fehler beim Compose-Start nach Reboot | `rm -rf /run/libpod /run/containers/storage /run/containers/networks`, vor einem Reboot `minikube delete` |
+| Rate-Limits bei Docker Hub und Maven Central | `podman login`, Services nacheinander bauen (`COMPOSE_PARALLEL_LIMIT=1`) |
+| minikube nutzt die falsche Container-Engine | `minikube delete`, dann `--driver=podman` |
+| Shell-Skripte laufen nicht unter PowerShell | Git Bash mit vollem Pfad aufrufen |
+| Unerwartete Git-Diffs unter Windows | `.gitattributes` + `core.autocrlf input` |
 
 **Gelernt:** Die meiste Zeit ging nicht in die App, sondern in die lokale Toolchain (WSL ↔ Podman ↔ Devcontainer ↔ minikube). Wer bei mehreren Engines nicht weiß, welche gerade aktiv ist, sucht lange an der falschen Stelle.
 
