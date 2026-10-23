@@ -61,3 +61,48 @@ Ohne explizite Konfiguration konvertiert Git auf Windows beim Checkout LF zu CRL
    ```bash
    git add --renormalize .
    ```
+
+---
+
+## 3. Podman: `aardvark-dns` bind failure nach Devcontainer-Reboot
+
+### Problem
+
+Nach einem Devcontainer-Neustart baut `podman compose up` zwar alle Images, scheitert
+aber beim Start des ersten Containers mit:
+
+```
+aardvark-dns failed to start: Error starting server failed to bind udp listener
+on 192.168.49.1:53: IO error: Cannot assign requested address (os error 99)
+```
+
+`192.168.49.1` ist das Gateway des **minikube**-Netzes, nicht des Compose-Netzes. Der
+Fehler bleibt auch nach dem Entfernen der Container bestehen.
+
+### Ursache
+
+1. Der Reboot ändert die boot ID der (WSL2-)VM. Podmans Laufzeit-State unter `/run`
+   ist stale — alle `podman`-Befehle melden dann zunächst
+   *"current system boot ID differs from cached boot ID; an unhandled reboot has occurred"*.
+2. Im netavark-State (`/run/containers/networks`) liegt noch ein verwaister
+   `minikube`-Eintrag mit Gateway `192.168.49.1`.
+3. `aardvark-dns` ist **ein einziger Prozess**, der beim Start an die Gateway-IPs
+   *aller* bekannten Netze bindet. Die tote minikube-Bridge `192.168.49.1` existiert
+   nach dem Reboot nicht mehr → Bind schlägt fehl → aardvark-Start scheitert komplett →
+   auch der eigentlich gesunde Compose-Container kommt nicht hoch.
+
+### Lösung
+
+Stale Laufzeit-State entfernen (die ersten beiden schlägt Podman selbst vor, das dritte
+enthält den verwaisten minikube-Eintrag):
+
+```bash
+rm -rf /run/libpod /run/containers/storage /run/containers/networks
+```
+
+Gefahrlos, solange kein Container läuft und außer dem Default-Netz `podman` keine
+persistente Netz-Definition existiert.
+
+Prävention: minikube vor einem Reboot sauber beenden (`minikube delete`), damit kein
+verwaister `192.168.49.1`-Eintrag zurückbleibt. Ausführliche Analyse siehe
+`docs/lab1/2026.10.22 flober .../analyse.md`.
