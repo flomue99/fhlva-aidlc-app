@@ -1,0 +1,312 @@
+[root@37ddbed58f8b sre3_g2_beer]# podman compose up
+>>>> Executing external compose provider "/usr/bin/podman-compose". Please see podman-compose(1) for how to disable this message. <<<<
+
+Resolved "nginx" as an alias (/etc/containers/registries.conf.d/000-shortnames.conf)
+Trying to pull docker.io/library/nginx:alpine...
+Resolving "postgres" using unqualified-search registries (/etc/containers/registries.conf.d/00-unqualified.conf)
+Trying to pull docker.io/library/postgres:16-alpine...
+Getting image source signatures
+Getting image source signatures
+Copying blob 2ec5fb117ffa [--------------------------------------] 0.0b / 1.2KiB
+Copying blob 7b229517ed22 [--------------------------------------] 0.0b / 3.7MiB
+Copying blob 657023555a2a [--------------------------------------] 0.0b / 629.0b
+Copying blob 12b85cff06fd [--------------------------------------] 0.0b / 1.8MiB
+Copying blob 7b229517ed22 [--------------------------------------] 0.0b / 3.7MiB | 0.0 b/s
+Copying blob 657023555a2a [--------------------------------------] 0.0b / 629.0b | 0.0 b/s
+Copying blob d982e6c592c4 done   | 
+Copying blob d982e6c592c4 done   | 
+Copying blob d982e6c592c4 done   | 
+Copying blob a735dce41235 done   | 
+Copying blob f121f7f3dec1 [======>-------------------------------] 19.4MiB / 106.1MiB | 1.3 MiB/s
+Copying blob d982e6c592c4 done   | 
+Copying blob a735dce41235 done   | 
+Copying blob f121f7f3dec1 done   | 
+Copying blob 7b229517ed22 done   | 
+Copying blob 42065dcfea93 done   | 
+Copying blob 768bbab50810 done   | 
+Copying blob 7ea8819886f9 done   | 
+Copying blob d3f6cab92edc done   | 
+Copying blob 911527e7800c done   | 
+Copying blob 22df74fd5323 done   | 
+Copying blob 9f477227db48 done   | 
+Copying config 6a2e324ebe done   | 
+Writing manifest to image destination
+6a2e324ebe59af6031c4c1cd96c1d5072c2ebc36563d2196365e43b8297c062d
+[1/2] STEP 1/6: FROM node:20-alpine AS builder
+[1/2] STEP 1/6: FROM maven:3.9-eclipse-temurin-21-alpine AS build
+[1/2] STEP 1/6: FROM maven:3.9-eclipse-temurin-21-alpine AS build
+Resolving "maven" using unqualified-search registries (/etc/containers/registries.conf.d/00-unqualified.conf)
+Trying to pull docker.io/library/maven:3.9-eclipse-temurin-21-alpine...
+Resolved "node" as an alias (/etc/containers/registries.conf.d/000-shortnames.conf)
+Trying to pull docker.io/library/node:20-alpine...
+Resolving "maven" using unqualified-search registries (/etc/containers/registries.conf.d/00-unqualified.conf)
+Trying to pull docker.io/library/maven:3.9-eclipse-temurin-21-alpine...
+[1/2] STEP 1/6: FROM maven:3.9-eclipse-temurin-21-alpine AS build
+[1/2] STEP 1/6: FROM maven:3.9-eclipse-temurin-21-alpine AS build
+Resolving "maven" using unqualified-search registries (/etc/containers/registries.conf.d/00-unqualified.conf)
+Resolving "maven" using unqualified-search registries (/etc/containers/registries.conf.d/00-unqualified.conf)
+Trying to pull docker.io/library/maven:3.9-eclipse-temurin-21-alpine...
+Trying to pull docker.io/library/maven:3.9-eclipse-temurin-21-alpine...
+Getting image source signatures
+Getting image source signatures
+Copying blob cc3da9d4496e [--------------------------------------] 0.0b / 3.2MiB
+Getting image source signatures
+Copying blob fff4e2c1b189 [--------------------------------------] 0.0b / 445.0b
+Copying blob 4feea04c1543 [--------------------------------------] 0.0b / 41.2MiB
+Getting image source signatures
+Copying blob cc3da9d4496e [--------------------------------------] 0.0b / 3.2MiB
+Copying blob cc3da9d4496e [--------------------------------------] 0.0b / 3.2MiB | 0.0 b/s
+Copying blob e2de96513ba9 [--------------------------------------] 0.0b / 3.7MiB
+Getting image source signatures
+Copying blob cc3da9d4496e [--------------------------------------] 0.0b / 3.2MiB
+Copying blob cc3da9d4496e [--------------------------------------] 0.0b / 3.2MiB | 0.0 b/s
+Copying blob e2de96513ba9 [--------------------------------------] 0.0b / 3.7MiB
+Copying blob 802e35573aa7 [--------------------------------------] 0.0b / 151.0MiB
+Copying blob e2de96513ba9 [--------------------------------------] 0.0b / 3.7MiB | 0.0 b/s
+Copying blob 802e35573aa7 [--------------------------------------] 0.0b / 151.0MiB | 0.0 b/s
+Copying blob 0aeafda7b1fa [--------------------------------------] 0.0b / 130.0b
+Copying blob f75bb0de4136 [--------------------------------------] 0.0b / 2.4KiB
+Copying blob 8e0e05dd51e5 [--------------------------------------] 0.0b / 20.4MiB
+Copying blob 0aeafda7b1fa [--------------------------------------] 0.0b / 130.0b | 0.0 b/s
+Copying blob 8e0e05dd51e5 [--------------------------------------] 0.0b / 20.4MiB | 0.0 b/s
+Copying blob cc3da9d4496e [--------------------------------------] 0.0b / 3.2MiB | 0.0 b/s
+Copying blob e2de96513ba9 [--------------------------------------] 0.0b / 3.7MiB
+Copying blob 802e35573aa7 [--------------------------------------] 0.0b / 151.0MiB
+Copying blob 8e0e05dd51e5 [--------------------------------------] 0.0b / 20.4MiB
+Copying blob f75bb0de4136 [--------------------------------------] 0.0b / 2.4KiB
+Copying blob cc3da9d4496e [=========>----------------------------] 894.8KiB / 3.2MiB | 91.0 KiB/s
+Copying blob cc3da9d4496e [==========>---------------------------] 921.6KiB / 3.2MiB | 596.6 KiB/s
+Copying blob cc3da9d4496e [=========>----------------------------] 894.8KiB / 3.2MiB | 91.0 KiB/s
+Copying blob cc3da9d4496e [============>-------------------------] 1.1MiB / 3.2MiB | 355.7 KiB/s
+Copying blob cc3da9d4496e [==============>-----------------------] 1.2MiB / 3.2MiB | 316.0 KiB/s
+Copying blob cc3da9d4496e [================>---------------------] 1.4MiB / 3.2MiB | 318.0 KiB/s
+Copying blob e2de96513ba9 [==>-----------------------------------] 271.4KiB / 3.7MiB | 156.2 KiB/s
+Copying blob cc3da9d4496e [=================>--------------------] 1.5MiB / 3.2MiB | 262.5 KiB/s
+Copying blob cc3da9d4496e [=======================>--------------] 2.0MiB / 3.2MiB | 231.6 KiB/s
+Copying blob cc3da9d4496e done   | 
+Copying blob cc3da9d4496e done   | 
+Copying blob 0aeafda7b1fa done   | 
+Copying blob cc3da9d4496e done   | 
+Copying blob cc3da9d4496e done   | 
+Copying blob cc3da9d4496e done   | 
+Copying blob 0aeafda7b1fa done   | 
+Copying blob cc3da9d4496e done   | 
+Copying blob cc3da9d4496e done   | 
+Copying blob 0aeafda7b1fa done   | 
+Copying blob 802e35573aa7 [===================>------------------] 79.2MiB / 151.0MiB | 617.4 KiB/s
+Copying blob f75bb0de4136 done   | 
+Copying blob e2de96513ba9 done   | 
+Copying blob 8e0e05dd51e5 done   | 
+Copying blob 69846174944f done   | 
+Copying blob f8dca891c9f7 done   | 
+Copying blob 94f838d7bd14 done   | 
+
+added 200 packages, and audited 201 packages in 43s
+
+30 packages are looking for funding
+  run `npm fund` for details
+
+15 vulnerabilities (5 moderate, 10 high)
+
+To address issues that do not require attention, run:
+  npm audit fix
+
+Copying blob cc3da9d4496e done   | 
+Copying blob cc3da9d4496e done   | 
+Copying blob cc3da9d4496e done   | 
+Copying blob 0aeafda7b1fa done   | 
+Copying blob cc3da9d4496e done   | 
+Copying blob 0aeafda7b1fa done   | 
+Copying blob 802e35573aa7 [===========================>----------] 109.8MiB / 151.0MiB | 612.7 KiB/s
+Copying blob f75bb0de4136 done   | 
+Copying blob cc3da9d4496e done   | 
+Copying blob 0aeafda7b1fa done   | 
+Copying blob cc3da9d4496e done   | 
+Copying blob cc3da9d4496e done   | 
+Copying blob cc3da9d4496e done   | 
+Copying blob cc3da9d4496e done   | 
+Copying blob e2de96513ba9 done   | 
+Copying blob 802e35573aa7 [=========================>------------] 102.0MiB / 151.0MiB | 494.9 KiB/s
+Copying blob 0aeafda7b1fa done   | 
+Copying blob 8e0e05dd51e5 done   | 
+Copying blob f75bb0de4136 done   | 
+Copying blob 69846174944f done   | 
+Copying blob f8dca891c9f7 done   | 
+Copying blob 94f838d7bd14 done   | 
+Copying blob cc3da9d4496e done   | 
+Copying blob 0aeafda7b1fa done   | 
+Copying blob cc3da9d4496e done   | 
+Copying blob cc3da9d4496e done   | 
+Copying blob cc3da9d4496e done   | 
+Copying blob cc3da9d4496e done   | 
+Copying blob 0aeafda7b1fa done   | 
+Copying blob cc3da9d4496e done   | 
+Copying blob 0aeafda7b1fa done   | 
+Copying blob 802e35573aa7 [=================================>----] 135.7MiB / 151.0MiB | 703.9 KiB/s
+Copying blob f75bb0de4136 done   | 
+Copying blob e2de96513ba9 done   | 
+Copying blob cc3da9d4496e done   | 
+Copying blob cc3da9d4496e done   | 
+Copying blob 0aeafda7b1fa done   | 
+Copying blob cc3da9d4496e done   | 
+Copying blob cc3da9d4496e done   | 
+Copying blob e2de96513ba9 done   | 
+Copying blob cc3da9d4496e done   | 
+Copying blob e2de96513ba9 done   | 
+Copying blob cc3da9d4496e done   | 
+Copying blob cc3da9d4496e done   | 
+Copying blob e2de96513ba9 done   | 
+Copying blob 802e35573aa7 [==================================>---] 140.6MiB / 151.0MiB | 911.0 KiB/s
+Copying blob 8e0e05dd51e5 done   | 
+Copying blob f75bb0de4136 done   | 
+Copying blob cc3da9d4496e done   | 
+Copying blob e2de96513ba9 done   | 
+Copying blob 802e35573aa7 done   | 
+Copying blob cc3da9d4496e done   | 
+Copying blob e2de96513ba9 done   | 
+Copying blob 802e35573aa7 [====================================>-] 147.9MiB / 151.0MiB | 2.7 MiB/s
+Copying blob 8e0e05dd51e5 done   | 
+Copying blob f75bb0de4136 done   | 
+Copying blob cc3da9d4496e done   | 
+Copying blob e2de96513ba9 done   | 
+Copying blob 802e35573aa7 done   | 
+Copying blob 8e0e05dd51e5 done   | 
+Copying blob f75bb0de4136 done   | 
+Copying blob 0aeafda7b1fa done   | 
+Copying blob 69846174944f done   | 
+Copying blob f8dca891c9f7 done   | 
+Copying blob 94f838d7bd14 done   | 
+Copying config c18dec8632 done   | 
+Writing manifest to image destination
+[1/2] STEP 2/6: WORKDIR /app
+--> 951fb0cd82de
+--> Using cache c85ed0d7a2c7a87a5d19b3354779bc4a00c866fa42f08b1df2d2ee8c270a4b29
+--> c85ed0d7a2c7
+[1/2] STEP 4/6: RUN mvn dependency:go-offline -q
+[1/2] STEP 3/6: COPY pom.xml .
+--> d562e279f8bd
+[1/2] STEP 4/6: RUN mvn dependency:go-offline -q
+--> b18b0643d79e
+[1/2] STEP 5/6: COPY src ./src
+--> 7ddc38c80914
+--> df5fed4a86be
+[1/2] STEP 5/6: COPY src ./src
+--> 31a9fed7f7ef
+[1/2] STEP 5/6: COPY src ./src
+[1/2] STEP 5/6: COPY src ./src
+--> 7d4cf7ede208
+[1/2] STEP 6/6: RUN mvn package -DskipTests -q
+--> 5f96b312ece0
+[1/2] STEP 6/6: RUN mvn package -DskipTests -q
+--> eb112328bafa
+[2/2] STEP 1/5: FROM eclipse-temurin:21-jre-alpine
+Resolving "eclipse-temurin" using unqualified-search registries (/etc/containers/registries.conf.d/00-unqualified.conf)
+Trying to pull docker.io/library/eclipse-temurin:21-jre-alpine...
+--> 667b88c2b27b
+--> 696483dad74a
+[1/2] STEP 6/6: RUN mvn package -DskipTests -q
+[1/2] STEP 6/6: RUN mvn package -DskipTests -q
+Getting image source signatures
+Copying blob 132f7ad9d540 done   | 
+Copying blob 132f7ad9d540 done   | 
+Copying blob 7b229517ed22 skipped: already exists  
+Copying blob 6428282c06b6 done   | 
+Copying blob 132f7ad9d540 done   | 
+Copying blob 132f7ad9d540 done   | 
+Copying blob 7b229517ed22 skipped: already exists  
+Copying blob 6428282c06b6 done   | 
+Copying blob 604b940e7f70 done   | 
+Copying blob 36648dbff65a done   | 
+--> b6e42ee36f01
+[2/2] STEP 1/5: FROM eclipse-temurin:21-jre-alpine
+Copying blob 132f7ad9d540 done   | 
+Copying blob 7b229517ed22 skipped: already exists  
+Copying blob 6428282c06b6 done   | 
+Copying blob 604b940e7f70 done   | 
+Copying blob 36648dbff65a done   | 
+Copying config bb1b8368a5 done   | 
+Writing manifest to image destination
+[2/2] STEP 2/5: WORKDIR /app
+--> 6b28ace66bc4
+[2/2] STEP 3/5: COPY --from=build /app/target/*.jar app.jar
+Getting image source signatures
+Getting image source signatures
+Getting image source signatures
+Copying blob 132f7ad9d540 skipped: already exists  
+Copying blob 7b229517ed22 skipped: already exists  
+Copying blob 604b940e7f70 skipped: already exists  
+Copying blob 6428282c06b6 skipped: already exists  
+Copying blob 36648dbff65a skipped: already exists  
+Copying config bb1b8368a5 done   | 
+Writing manifest to image destination
+Copying blob 132f7ad9d540 skipped: already exists  
+Copying blob 7b229517ed22 skipped: already exists  
+Copying blob 604b940e7f70 skipped: already exists  
+Copying blob 36648dbff65a skipped: already exists  
+Copying blob 6428282c06b6 skipped: already exists  
+[2/2] STEP 2/5: WORKDIR /app
+--> Using cache 6b28ace66bc48cef961c973bb263c09e779f5345c05e16034e6d67d0b3134922
+--> 6b28ace66bc4
+[2/2] STEP 3/5: COPY --from=build /app/target/*.jar app.jar
+Copying blob 132f7ad9d540 skipped: already exists  
+Copying blob 7b229517ed22 skipped: already exists  
+Copying blob 132f7ad9d540 skipped: already exists  
+Copying blob 7b229517ed22 skipped: already exists  
+Copying blob 604b940e7f70 skipped: already exists  
+Copying blob 6428282c06b6 skipped: already exists  
+Copying blob 36648dbff65a skipped: already exists  
+Copying config bb1b8368a5 done   | 
+Copying config bb1b8368a5 done   | 
+Writing manifest to image destination
+--> Using cache 6b28ace66bc48cef961c973bb263c09e779f5345c05e16034e6d67d0b3134922
+--> 6b28ace66bc4
+--> 98d02e698bfe
+[2/2] STEP 2/5: WORKDIR /app
+[2/2] STEP 3/5: COPY --from=build /app/target/*.jar app.jar
+[2/2] STEP 4/5: EXPOSE 8081
+--> Using cache 6b28ace66bc48cef961c973bb263c09e779f5345c05e16034e6d67d0b3134922
+--> 6b28ace66bc4
+[2/2] STEP 3/5: COPY --from=build /app/target/*.jar app.jar
+--> 56ea92d63fb3
+[2/2] STEP 5/5: ENTRYPOINT ["java", "-jar", "app.jar"]
+[2/2] COMMIT sre3_g2_beer_auth-service
+--> 2b7616f5fac5
+Successfully tagged localhost/sre3_g2_beer_auth-service:latest
+--> 822d08fbf577
+--> 57a6e2da0552
+[2/2] STEP 4/5: EXPOSE 8082
+[2/2] STEP 4/5: EXPOSE 8084
+2b7616f5fac5e14a6116640570e9d2125e72ecce841305f4fd223584a0297182
+--> ba4307c053ee
+[2/2] STEP 5/5: ENTRYPOINT ["java", "-jar", "app.jar"]
+--> 361783bb9ef6
+[2/2] STEP 5/5: ENTRYPOINT ["java", "-jar", "app.jar"]
+[2/2] COMMIT sre3_g2_beer_beer-tracking-service
+[2/2] COMMIT sre3_g2_beer_statistics-service
+--> 658bab89d96a
+Successfully tagged localhost/sre3_g2_beer_beer-tracking-service:latest
+--> 48646dacd018
+[2/2] STEP 4/5: EXPOSE 8083
+--> c247dcc0073c
+Successfully tagged localhost/sre3_g2_beer_statistics-service:latest
+658bab89d96a70d2108a8a60c94bc2753fe1edc6f4ba0b88d15d087b3e5818b0
+--> 719e4ac8a157
+[2/2] STEP 5/5: ENTRYPOINT ["java", "-jar", "app.jar"]
+[2/2] COMMIT sre3_g2_beer_health-notification-service
+--> 7ffd2082cb43
+Successfully tagged localhost/sre3_g2_beer_health-notification-service:latest
+c247dcc0073c6f37b6cbc8f86019d8104b6b402ec6be465c1ced498e8b4102bd
+7ffd2082cb430e673c35e849fc010f12658673dfb1b0f60e3f26e6577f6bdffc
+85a08dc6b96e287fc822bb5c7f381949d0d2fefa21ce46d985ce17ae86454de9
+1ce3f612b52fe2e1c652c3fb66dc0af750c8cf84223e3d876ed7eba8dc3b88fb
+5489a13cdee2801f03f809fb55d383e22fef224e3b320c4881170f75c057846b
+e0aa56caf8a3859767ebf814715e21b5b49d0ede97088edc97d0b04d3513a6a4
+5d81042653939343c040f52ae27f15c681ca9b1852ca709f65e694c0451231e7
+6370cea9941875c35645167a9e813cffd22ffe76af00ffd455d9271ba3c36b74
+57022ea0f78eb69c7194eda7ea3165c83eb62a29cfc6829db6096e23cefaf3a5
+66628799b823952967a4e9bb466aadb070e411f75aacebf92bda27737682c994
+[postgres]                    | [WARN  netavark::dns::aardvark] Failed to delete aardvark-dns entries after failed start: aardvark-dns failed to start: Error from child process
+[postgres]                    |     Error starting server failed to bind udp listener on 192.168.49.1:53: IO error: Cannot assign requested address (os error 99)
+[postgres]                    | Error: unable to start container 1ce3f612b52fe2e1c652c3fb66dc0af750c8cf84223e3d876ed7eba8dc3b88fb: netavark: error while applying dns entries: aardvark-dns failed to start: Error from child process
+[postgres]                    | Error starting server failed to bind udp listener on 192.168.49.1:53: IO error: Cannot assign requested address (os error 99)
+  
