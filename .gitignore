@@ -115,4 +115,5 @@ infra/terraform/secrets.tfvars
 infra/terraform/stages/dev/tfplan
 dynakube.yaml
 .local_main.tf
-.claude
+.claude/
+.claude/settings.json
