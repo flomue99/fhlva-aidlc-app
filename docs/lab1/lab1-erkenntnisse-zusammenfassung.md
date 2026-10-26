@@ -1,8 +1,9 @@
-# Lab 1 – Erkenntnisse (Gruppe „Meds“, health-notification-service)
-
+# SRE3, Lab 1 Bericht - Erkenntnisse und Zusammenfassung
+### Gruppe: G2-Meds, health-notification-service
+### Florian Bergthaler, Florian Mühleder, Jonas Mühleder
 > Kurzpräsentation, max. 5 Minuten. Zeitangaben pro Abschnitt als Orientierung.
 
-**Lab-1-Aufgabe:** App lokal (podman compose, minikube) und auf Azure zum Laufen bringen, Probleme notieren und zusammenfassen, was unser Service macht.
+Aufgabe war die App lokal (podman compose, minikube) und auf Azure zum Laufen bringen, Probleme notieren und zusammenfassen, was unser Service macht.
 
 ---
 
@@ -17,7 +18,7 @@
 
 ## 2. Deployment-Probleme und Lösungen (~2 min)
 
-**Stand:** Lokal läuft der komplette Stack, sowohl per `podman compose` im Devcontainer als auch auf minikube. Das Azure-Deployment ist noch offen.
+Lokal läuft der komplette Stack, sowohl per `podman compose` im Devcontainer als auch auf minikube. Das Azure-Deployment haben wir im Lab 2 gemacht. Im Folgenden eine Aufzählung der aufgetretenen Probleme und wie wir sie gelöst haben.
 
 | Problem | Lösung |
 |---|---|
@@ -29,7 +30,7 @@
 | Shell-Skripte laufen nicht unter PowerShell | Git Bash mit vollem Pfad aufrufen |
 | Unerwartete Git-Diffs unter Windows | `.gitattributes` + `core.autocrlf input` |
 
-**Gelernt:** Die meiste Zeit ging nicht in die App, sondern in die lokale Toolchain (WSL ↔ Podman ↔ Devcontainer ↔ minikube). Wer bei mehreren Engines nicht weiß, welche gerade aktiv ist, sucht lange an der falschen Stelle.
+Die meiste Zeit ging nicht in die App, sondern in die lokale Toolchain (WSL ↔ Podman ↔ Devcontainer ↔ minikube). Wer bei mehreren Engines nicht weiß, welche gerade aktiv ist, sucht lange an der falschen Stelle.
 
 ## 3. SRE-Befunde im Service-Code (~1,5 min)
 
@@ -41,11 +42,11 @@ Die wichtigsten Risiken aus der Architekturanalyse:
 4. **Keine Metriken.** `/actuator/prometheus` ist freigegeben, aber die Prometheus-Dependency fehlt, und der Endpunkt verlangt zusätzlich ein JWT.
 5. Kleinere Punkte:
    - Bestätigt ein User eine Warnung, wird sie sofort wieder neu angelegt, solange er weiterhin über dem Limit liegt.
-   - Fehlerhafte Eingaben liefern einen Serverfehler (500) statt einer Fehlermeldung „ungültige Anfrage“ (400). Das passiert, wenn die User-ID im JWT (das Feld `sub`) keine gültige UUID ist oder die Paging-Parameter ungültig sind.
+   - Fehlerhafte Eingaben liefern einen Serverfehler (500) statt einer Fehlermeldung „ungültige Anfrage“ (400). Etwa wenn die User-ID im JWT (Feld `sub`) keine gültige UUID ist oder die Paging-Parameter ungültig sind.
 
 ## 4. Ausblick Lab 2: SLIs/SLOs (~0,5 min)
 
-- HTTP-Metriken allein reichen nicht. Wenn der Scheduler hängt, liefert die API weiter `200 OK`, nur mit veralteten Warnungen.
+- HTTP-Metriken allein reichen nicht. Wenn der Scheduler hängt, liefert die API weiter `200 OK`.
 - Vorgeschlagene SLOs (28 Tage):
   - API-Verfügbarkeit **99,5 %**
   - Latenz **95 % ≤ 300 ms**
