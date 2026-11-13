@@ -6,7 +6,10 @@
     "statistics_trend": { "p95": 1000 },
     "statistics_global": { "p95": 1000 },
     "tracking_list": { "p95": 1000 },
-    "tracking_create": { "p95": 1000 },
-    "notifications_list": { "p95": 1000 }
+    "tracking_create": { "p95": 1000 },    
+
+    "_comment": "two of our SLOs",
+    "notifications_list": { "p95": 500, "errorRate": 0.01 },
+    "notifications_acknowledge": { "p95": 500, "errorRate": 0.005 }
   }
 }

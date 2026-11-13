@@ -43,6 +43,11 @@ function thresholds() {
     if (slo.p95) rules.push(rule(`p(95)<${slo.p95}`));
     if (slo.p99) rules.push(rule(`p(99)<${slo.p99}`));
     if (rules.length) t[`http_req_duration{name:${step}}`] = rules;
+
+    // Optional per-step availability SLO (fraction of failed requests for this step only).
+    if (slo.errorRate !== undefined && PROFILE !== 'smoke') {
+      t[`http_req_failed{name:${step}}`] = [rule(`rate<${slo.errorRate}`)];
+    }     
   }
   if (PROFILE === 'newcomers') {
     // Not SLOs: always-true thresholds, only so the summary lists these steps.
@@ -92,6 +97,19 @@ function login(email, name = 'auth_login', extra) {
 function expiry(token) {
   const payload = token.split('.')[1];
   return JSON.parse(encoding.b64decode(payload, 'rawurl', 's')).exp;
+}
+
+// Id of the first ACTIVE warning in a /notifications/warnings response, or null.
+function activeWarning(res) {
+  if (!res) return null;
+  try {
+    const body = res.json();
+    const items = body.items || body.content || [];
+    const w = items.find((i) => i.status === 'ACTIVE');
+    return w ? w.id : null;
+  } catch (e) {
+    return null;
+  }
 }
 
 function createEntry(token, name = 'tracking_create', extra) {
@@ -178,10 +196,24 @@ export function visit(data) {
     ['notifications_list', () => http.get(`${URLS.notifications}/notifications/warnings`, params('notifications_list', token))],
   );
 
+  // step loop
   for (const [step, call] of steps) {
     const res = call();
     ok(res, step);
     if (res.status === 401) session.renewAt = 0; // token rejected: renew next time
+    if (step === 'notifications_list' && res.status === 200) warnings = res;
+  }
+
+  // Acknowledge one active warning, as the user does in the notifications panel.
+  // Only users over a threshold have one, so this step runs on part of the visits.
+  const active = activeWarning(warnings);
+  if (active) {
+    const res = http.post(
+      `${URLS.notifications}/notifications/warnings/${active}/acknowledge`,
+      null,
+      params('notifications_acknowledge', token),
+    );
+    ok(res, 'notifications_acknowledge');
   }
 
   if (PROFILE === 'smoke') sleep(1);
