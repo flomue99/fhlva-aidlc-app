@@ -197,6 +197,7 @@ export function visit(data) {
   );
 
   // step loop
+  let warnings = null;
   for (const [step, call] of steps) {
     const res = call();
     ok(res, step);

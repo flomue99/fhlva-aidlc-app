@@ -1,0 +1,331 @@
+[root@37ddbed58f8b sre3_g2_beer]# PROFILE=gate ./load/run-local.sh
+k6: profile=gate target=http://nginx:80 network=sre3_g2_beer_beer-tracker-network image=docker.io/grafana/k6:2.3.0
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+
+     execution: local
+        script: /load/script.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 20 max VUs, 1m30s max duration (incl. graceful stop):
+              * gate: 2.00 iterations/s for 1m0s (maxVUs: 5-20, exec: visit, gracefulStop: 30s)
+
+
+Run    [ 100% ] setup()
+gate   [   0% ]
+
+Run    [ 100% ] setup()
+gate   [   0% ]
+
+Run    [ 100% ] setup()
+gate   [   0% ]
+
+Run    [ 100% ] setup()
+gate   [   0% ]
+
+Run    [ 100% ] setup()
+gate   [   0% ]
+
+Run    [ 100% ] setup()
+gate   [   0% ]
+
+Run    [ 100% ] setup()
+gate   [   0% ]
+
+Run    [ 100% ] setup()
+gate   [   0% ]
+
+Run    [ 100% ] setup()
+gate   [   0% ]
+
+Run    [ 100% ] setup()
+gate   [   0% ]
+
+Run    [ 100% ] setup()
+gate   [   0% ]
+
+Run    [ 100% ] setup()
+gate   [   0% ]
+
+Run    [ 100% ] setup()
+gate   [   0% ]
+
+Run    [ 100% ] setup()
+gate   [   0% ]
+
+Run    [ 100% ] setup()
+gate   [   0% ]
+
+Run    [ 100% ] setup()
+gate   [   0% ]
+
+Run    [ 100% ] setup()
+gate   [   0% ]
+
+Run    [ 100% ] setup()
+gate   [   0% ]
+
+running (0m18.3s), 00/05 VUs, 2 complete and 0 interrupted iterations
+gate   [   1% ] 00/05 VUs  0m00.9s/1m0s  2.00 iters/s
+
+running (0m19.3s), 00/05 VUs, 4 complete and 0 interrupted iterations
+gate   [   3% ] 00/05 VUs  0m01.9s/1m0s  2.00 iters/s
+
+running (0m20.3s), 00/05 VUs, 6 complete and 0 interrupted iterations
+gate   [   5% ] 00/05 VUs  0m02.9s/1m0s  2.00 iters/s
+
+running (0m21.3s), 00/05 VUs, 8 complete and 0 interrupted iterations
+gate   [   6% ] 00/05 VUs  0m03.9s/1m0s  2.00 iters/s
+
+running (0m22.3s), 00/05 VUs, 10 complete and 0 interrupted iterations
+gate   [   8% ] 00/05 VUs  0m04.9s/1m0s  2.00 iters/s
+
+running (0m23.3s), 00/05 VUs, 12 complete and 0 interrupted iterations
+gate   [  10% ] 00/05 VUs  0m05.9s/1m0s  2.00 iters/s
+
+running (0m24.3s), 00/05 VUs, 14 complete and 0 interrupted iterations
+gate   [  11% ] 00/05 VUs  0m06.9s/1m0s  2.00 iters/s
+
+running (0m25.3s), 00/05 VUs, 16 complete and 0 interrupted iterations
+gate   [  13% ] 00/05 VUs  0m07.9s/1m0s  2.00 iters/s
+
+running (0m26.3s), 00/05 VUs, 18 complete and 0 interrupted iterations
+gate   [  15% ] 00/05 VUs  0m08.9s/1m0s  2.00 iters/s
+
+running (0m27.3s), 00/05 VUs, 20 complete and 0 interrupted iterations
+gate   [  16% ] 00/05 VUs  0m09.9s/1m0s  2.00 iters/s
+
+running (0m28.3s), 00/05 VUs, 22 complete and 0 interrupted iterations
+gate   [  18% ] 00/05 VUs  0m10.9s/1m0s  2.00 iters/s
+
+running (0m29.3s), 00/05 VUs, 24 complete and 0 interrupted iterations
+gate   [  20% ] 00/05 VUs  0m11.9s/1m0s  2.00 iters/s
+
+running (0m30.3s), 00/05 VUs, 26 complete and 0 interrupted iterations
+gate   [  21% ] 00/05 VUs  0m12.9s/1m0s  2.00 iters/s
+
+running (0m31.3s), 00/05 VUs, 28 complete and 0 interrupted iterations
+gate   [  23% ] 00/05 VUs  0m13.9s/1m0s  2.00 iters/s
+
+running (0m32.3s), 00/05 VUs, 30 complete and 0 interrupted iterations
+gate   [  25% ] 00/05 VUs  0m14.9s/1m0s  2.00 iters/s
+
+running (0m33.3s), 00/05 VUs, 32 complete and 0 interrupted iterations
+gate   [  26% ] 00/05 VUs  0m15.9s/1m0s  2.00 iters/s
+
+running (0m34.3s), 00/05 VUs, 34 complete and 0 interrupted iterations
+gate   [  28% ] 00/05 VUs  0m16.9s/1m0s  2.00 iters/s
+
+running (0m35.3s), 00/05 VUs, 36 complete and 0 interrupted iterations
+gate   [  30% ] 00/05 VUs  0m17.9s/1m0s  2.00 iters/s
+
+running (0m36.3s), 00/05 VUs, 38 complete and 0 interrupted iterations
+gate   [  31% ] 00/05 VUs  0m18.9s/1m0s  2.00 iters/s
+
+running (0m37.3s), 00/05 VUs, 40 complete and 0 interrupted iterations
+gate   [  33% ] 00/05 VUs  0m19.9s/1m0s  2.00 iters/s
+
+running (0m38.3s), 00/05 VUs, 42 complete and 0 interrupted iterations
+gate   [  35% ] 00/05 VUs  0m20.9s/1m0s  2.00 iters/s
+
+running (0m39.3s), 00/05 VUs, 44 complete and 0 interrupted iterations
+gate   [  36% ] 00/05 VUs  0m21.9s/1m0s  2.00 iters/s
+
+running (0m40.3s), 00/05 VUs, 46 complete and 0 interrupted iterations
+gate   [  38% ] 00/05 VUs  0m22.9s/1m0s  2.00 iters/s
+
+running (0m41.3s), 00/05 VUs, 48 complete and 0 interrupted iterations
+gate   [  40% ] 00/05 VUs  0m23.9s/1m0s  2.00 iters/s
+
+running (0m42.3s), 00/05 VUs, 50 complete and 0 interrupted iterations
+gate   [  41% ] 00/05 VUs  0m24.9s/1m0s  2.00 iters/s
+
+running (0m43.3s), 00/05 VUs, 52 complete and 0 interrupted iterations
+gate   [  43% ] 00/05 VUs  0m25.9s/1m0s  2.00 iters/s
+
+running (0m44.3s), 00/05 VUs, 54 complete and 0 interrupted iterations
+gate   [  45% ] 00/05 VUs  0m26.9s/1m0s  2.00 iters/s
+
+running (0m45.3s), 00/05 VUs, 56 complete and 0 interrupted iterations
+gate   [  46% ] 00/05 VUs  0m27.9s/1m0s  2.00 iters/s
+
+running (0m46.3s), 00/05 VUs, 58 complete and 0 interrupted iterations
+gate   [  48% ] 00/05 VUs  0m28.9s/1m0s  2.00 iters/s
+
+running (0m47.3s), 00/05 VUs, 60 complete and 0 interrupted iterations
+gate   [  50% ] 00/05 VUs  0m29.9s/1m0s  2.00 iters/s
+
+running (0m48.3s), 00/05 VUs, 62 complete and 0 interrupted iterations
+gate   [  51% ] 00/05 VUs  0m30.9s/1m0s  2.00 iters/s
+
+running (0m49.3s), 00/05 VUs, 64 complete and 0 interrupted iterations
+gate   [  53% ] 00/05 VUs  0m31.9s/1m0s  2.00 iters/s
+
+running (0m50.3s), 00/05 VUs, 66 complete and 0 interrupted iterations
+gate   [  55% ] 00/05 VUs  0m32.9s/1m0s  2.00 iters/s
+
+running (0m50.5s), 00/05 VUs, 68 complete and 0 interrupted iterations
+gate   [  56% ] 00/05 VUs  0m33.9s/1m0s  2.00 iters/s
+
+running (0m51.5s), 00/05 VUs, 70 complete and 0 interrupted iterations
+gate   [  58% ] 00/05 VUs  0m34.9s/1m0s  2.00 iters/s
+
+running (0m52.5s), 00/05 VUs, 72 complete and 0 interrupted iterations
+gate   [  60% ] 00/05 VUs  0m35.9s/1m0s  2.00 iters/s
+
+running (0m53.5s), 00/05 VUs, 74 complete and 0 interrupted iterations
+gate   [  61% ] 00/05 VUs  0m36.9s/1m0s  2.00 iters/s
+
+running (0m54.5s), 00/05 VUs, 76 complete and 0 interrupted iterations
+gate   [  63% ] 00/05 VUs  0m37.9s/1m0s  2.00 iters/s
+
+running (0m55.5s), 00/05 VUs, 78 complete and 0 interrupted iterations
+gate   [  65% ] 00/05 VUs  0m38.9s/1m0s  2.00 iters/s
+
+running (0m56.5s), 00/05 VUs, 80 complete and 0 interrupted iterations
+gate   [  66% ] 00/05 VUs  0m39.9s/1m0s  2.00 iters/s
+
+running (0m57.5s), 00/05 VUs, 82 complete and 0 interrupted iterations
+gate   [  68% ] 00/05 VUs  0m40.9s/1m0s  2.00 iters/s
+
+running (0m58.5s), 00/05 VUs, 84 complete and 0 interrupted iterations
+gate   [  70% ] 00/05 VUs  0m41.9s/1m0s  2.00 iters/s
+
+running (0m59.5s), 00/05 VUs, 86 complete and 0 interrupted iterations
+gate   [  71% ] 00/05 VUs  0m42.9s/1m0s  2.00 iters/s
+
+running (1m00.5s), 00/05 VUs, 88 complete and 0 interrupted iterations
+gate   [  73% ] 00/05 VUs  0m43.9s/1m0s  2.00 iters/s
+
+running (1m01.5s), 00/05 VUs, 90 complete and 0 interrupted iterations
+gate   [  75% ] 00/05 VUs  0m44.9s/1m0s  2.00 iters/s
+
+running (1m02.5s), 00/05 VUs, 92 complete and 0 interrupted iterations
+gate   [  76% ] 00/05 VUs  0m45.9s/1m0s  2.00 iters/s
+
+running (1m03.5s), 00/05 VUs, 94 complete and 0 interrupted iterations
+gate   [  78% ] 00/05 VUs  0m46.9s/1m0s  2.00 iters/s
+
+running (1m04.5s), 00/05 VUs, 96 complete and 0 interrupted iterations
+gate   [  80% ] 00/05 VUs  0m47.9s/1m0s  2.00 iters/s
+
+running (1m05.5s), 00/05 VUs, 98 complete and 0 interrupted iterations
+gate   [  81% ] 00/05 VUs  0m48.9s/1m0s  2.00 iters/s
+
+running (1m06.5s), 00/05 VUs, 100 complete and 0 interrupted iterations
+gate   [  83% ] 00/05 VUs  0m49.9s/1m0s  2.00 iters/s
+
+running (1m07.5s), 00/05 VUs, 102 complete and 0 interrupted iterations
+gate   [  85% ] 00/05 VUs  0m50.9s/1m0s  2.00 iters/s
+
+running (1m08.5s), 00/05 VUs, 104 complete and 0 interrupted iterations
+gate   [  86% ] 00/05 VUs  0m51.9s/1m0s  2.00 iters/s
+
+running (1m09.5s), 00/05 VUs, 106 complete and 0 interrupted iterations
+gate   [  88% ] 00/05 VUs  0m52.9s/1m0s  2.00 iters/s
+
+running (1m10.5s), 00/05 VUs, 108 complete and 0 interrupted iterations
+gate   [  90% ] 00/05 VUs  0m53.9s/1m0s  2.00 iters/s
+
+running (1m11.5s), 00/05 VUs, 110 complete and 0 interrupted iterations
+gate   [  91% ] 00/05 VUs  0m54.9s/1m0s  2.00 iters/s
+
+running (1m12.5s), 00/05 VUs, 112 complete and 0 interrupted iterations
+gate   [  93% ] 00/05 VUs  0m55.9s/1m0s  2.00 iters/s
+
+running (1m13.5s), 00/05 VUs, 114 complete and 0 interrupted iterations
+gate   [  95% ] 00/05 VUs  0m56.9s/1m0s  2.00 iters/s
+
+running (1m14.5s), 00/05 VUs, 116 complete and 0 interrupted iterations
+gate   [  96% ] 00/05 VUs  0m57.9s/1m0s  2.00 iters/s
+
+running (1m15.5s), 00/05 VUs, 118 complete and 0 interrupted iterations
+gate   [  98% ] 00/05 VUs  0m58.9s/1m0s  2.00 iters/s
+
+running (1m16.5s), 00/05 VUs, 120 complete and 0 interrupted iterations
+gate   [ 100% ] 00/05 VUs  0m59.9s/1m0s  2.00 iters/s
+
+
+  █ THRESHOLDS 
+
+    http_req_duration{name:notifications_acknowledge}
+    ✓ 'p(95)<500' p(95)=19.7ms
+
+    http_req_duration{name:notifications_list}
+    ✓ 'p(95)<500' p(95)=4.56ms
+
+    http_req_duration{name:statistics_global}
+    ✓ 'p(95)<1000' p(95)=2.49ms
+
+    http_req_duration{name:statistics_me}
+    ✓ 'p(95)<1000' p(95)=4.12ms
+
+    http_req_duration{name:statistics_trend}
+    ✓ 'p(95)<1000' p(95)=3.25ms
+
+    http_req_duration{name:tracking_create}
+    ✓ 'p(95)<1000' p(95)=10.42ms
+
+    http_req_duration{name:tracking_list}
+    ✓ 'p(95)<1000' p(95)=3.76ms
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.00%
+
+      {name:notifications_acknowledge}
+      ✓ 'rate<0.005' rate=0.00%
+
+      {name:notifications_list}
+      ✓ 'rate<0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 707     9.222252/s
+    checks_succeeded...: 100.00% 707 out of 707
+    checks_failed......: 0.00%   0 out of 707
+
+    ✓ statistics_me 2xx
+    ✓ statistics_trend 2xx
+    ✓ tracking_list 2xx
+    ✓ tracking_create 2xx
+    ✓ statistics_global 2xx
+    ✓ notifications_list 2xx
+    ✓ notifications_acknowledge 2xx
+
+    HTTP
+    http_req_duration......................: avg=25.68ms p(50)=2.12ms  p(95)=77.59ms p(99)=735.97ms max=984.02ms
+      { expected_response:true }...........: avg=25.68ms p(50)=2.12ms  p(95)=77.59ms p(99)=735.97ms max=984.02ms
+      { name:notifications_acknowledge }...: avg=7.54ms  p(50)=5.37ms  p(95)=19.7ms  p(99)=32.34ms  max=50.06ms 
+      { name:notifications_list }..........: avg=2.56ms  p(50)=2.16ms  p(95)=4.56ms  p(99)=9.29ms   max=11.9ms  
+      { name:statistics_global }...........: avg=1.79ms  p(50)=1.65ms  p(95)=2.49ms  p(99)=4.1ms    max=10.68ms 
+      { name:statistics_me }...............: avg=2.38ms  p(50)=1.97ms  p(95)=4.12ms  p(99)=5.41ms   max=6.94ms  
+      { name:statistics_trend }............: avg=1.99ms  p(50)=1.81ms  p(95)=3.25ms  p(99)=4.57ms   max=6.49ms  
+      { name:tracking_create }.............: avg=5.66ms  p(50)=5.25ms  p(95)=10.42ms p(99)=11.93ms  max=12.7ms  
+      { name:tracking_list }...............: avg=2.71ms  p(50)=2.1ms   p(95)=3.76ms  p(99)=16.76ms  max=34.04ms 
+    http_req_failed........................: 0.00%  0 out of 787
+      { name:notifications_acknowledge }...: 0.00%  0 out of 72
+      { name:notifications_list }..........: 0.00%  0 out of 120
+    http_reqs..............................: 787    10.265788/s
+
+    EXECUTION
+    iteration_duration.....................: avg=18.65ms p(50)=16.55ms p(95)=33.1ms  p(99)=43.72ms  max=94.26ms 
+    iterations.............................: 120    1.565304/s
+    vus....................................: 0      min=0        max=0
+    vus_max................................: 5      min=5        max=5
+
+    NETWORK
+    data_received..........................: 884 kB 12 kB/s
+    data_sent..............................: 604 kB 7.9 kB/s
+
+
+
+
+running (1m16.7s), 00/05 VUs, 120 complete and 0 interrupted iterations
+gate ✓ [ 100% ] 00/05 VUs  1m0s  2.00 iters/s
+[root@37ddbed58f8b sre3_g2_beer]# 
