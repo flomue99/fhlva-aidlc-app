@@ -1,0 +1,353 @@
+[root@37ddbed58f8b sre3_g2_beer]# PROFILE=smoke ./load/run-local.sh
+k6: profile=smoke target=http://nginx:80 network=sre3_g2_beer_beer-tracker-network image=docker.io/grafana/k6:2.3.0
+Trying to pull docker.io/grafana/k6:2.3.0...
+Getting image source signatures
+Copying blob 55afa1ecc21d done   | 
+Copying blob 699240e0b337 done   | 
+Copying blob 4f4fb700ef54 done   | 
+Copying blob 2b28f25602d4 done   | 
+Copying config fc863de07a done   | 
+Writing manifest to image destination
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+
+     execution: local
+        script: /load/script.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 1 max VUs, 1m0s max duration (incl. graceful stop):
+              * smoke: 1 looping VUs for 30s (exec: visit, gracefulStop: 30s)
+
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+Run     [ 100% ] setup()
+smoke   [   0% ]
+
+running (0m33.2s), 1/1 VUs, 0 complete and 0 interrupted iterations
+smoke   [   3% ] 1 VUs  00.9s/30s
+
+running (0m34.2s), 1/1 VUs, 1 complete and 0 interrupted iterations
+smoke   [   6% ] 1 VUs  01.9s/30s
+
+running (0m35.2s), 1/1 VUs, 2 complete and 0 interrupted iterations
+smoke   [  10% ] 1 VUs  02.9s/30s
+
+running (0m36.2s), 1/1 VUs, 3 complete and 0 interrupted iterations
+smoke   [  13% ] 1 VUs  03.9s/30s
+
+running (0m36.8s), 1/1 VUs, 3 complete and 0 interrupted iterations
+smoke   [  15% ] 1 VUs  04.4s/30s
+
+running (0m36.8s), 1/1 VUs, 3 complete and 0 interrupted iterations
+smoke   [  15% ] 1 VUs  04.5s/30s
+
+running (0m36.8s), 1/1 VUs, 3 complete and 0 interrupted iterations
+smoke   [  15% ] 1 VUs  04.5s/30s
+
+running (0m36.8s), 1/1 VUs, 3 complete and 0 interrupted iterations
+smoke   [  15% ] 1 VUs  04.5s/30s
+
+running (0m37.0s), 1/1 VUs, 4 complete and 0 interrupted iterations
+smoke   [  15% ] 1 VUs  04.6s/30s
+
+running (0m37.0s), 1/1 VUs, 4 complete and 0 interrupted iterations
+smoke   [  15% ] 1 VUs  04.6s/30s
+
+running (0m37.2s), 1/1 VUs, 4 complete and 0 interrupted iterations
+smoke   [  16% ] 1 VUs  04.9s/30s
+
+running (0m38.2s), 1/1 VUs, 5 complete and 0 interrupted iterations
+smoke   [  20% ] 1 VUs  05.9s/30s
+
+running (0m39.2s), 1/1 VUs, 6 complete and 0 interrupted iterations
+smoke   [  23% ] 1 VUs  06.9s/30s
+
+running (0m40.2s), 1/1 VUs, 7 complete and 0 interrupted iterations
+smoke   [  26% ] 1 VUs  07.9s/30s
+
+running (0m41.2s), 1/1 VUs, 8 complete and 0 interrupted iterations
+smoke   [  30% ] 1 VUs  08.9s/30s
+
+running (0m42.2s), 1/1 VUs, 9 complete and 0 interrupted iterations
+smoke   [  33% ] 1 VUs  09.9s/30s
+
+running (0m43.2s), 1/1 VUs, 10 complete and 0 interrupted iterations
+smoke   [  36% ] 1 VUs  10.9s/30s
+
+running (0m44.2s), 1/1 VUs, 11 complete and 0 interrupted iterations
+smoke   [  40% ] 1 VUs  11.9s/30s
+
+running (0m45.2s), 1/1 VUs, 12 complete and 0 interrupted iterations
+smoke   [  43% ] 1 VUs  12.9s/30s
+
+running (0m46.2s), 1/1 VUs, 13 complete and 0 interrupted iterations
+smoke   [  46% ] 1 VUs  13.9s/30s
+
+running (0m47.2s), 1/1 VUs, 13 complete and 0 interrupted iterations
+smoke   [  50% ] 1 VUs  14.9s/30s
+
+running (0m48.2s), 1/1 VUs, 14 complete and 0 interrupted iterations
+smoke   [  53% ] 1 VUs  15.9s/30s
+
+running (0m49.2s), 1/1 VUs, 15 complete and 0 interrupted iterations
+smoke   [  56% ] 1 VUs  16.9s/30s
+
+running (0m50.2s), 1/1 VUs, 16 complete and 0 interrupted iterations
+smoke   [  60% ] 1 VUs  17.9s/30s
+
+running (0m50.5s), 1/1 VUs, 17 complete and 0 interrupted iterations
+smoke   [  63% ] 1 VUs  18.9s/30s
+
+running (0m51.5s), 1/1 VUs, 18 complete and 0 interrupted iterations
+smoke   [  66% ] 1 VUs  19.9s/30s
+
+running (0m52.5s), 1/1 VUs, 19 complete and 0 interrupted iterations
+smoke   [  70% ] 1 VUs  20.9s/30s
+
+running (0m53.5s), 1/1 VUs, 20 complete and 0 interrupted iterations
+smoke   [  73% ] 1 VUs  21.9s/30s
+
+running (0m54.5s), 1/1 VUs, 21 complete and 0 interrupted iterations
+smoke   [  76% ] 1 VUs  22.9s/30s
+
+running (0m55.5s), 1/1 VUs, 22 complete and 0 interrupted iterations
+smoke   [  80% ] 1 VUs  23.9s/30s
+
+running (0m56.5s), 1/1 VUs, 23 complete and 0 interrupted iterations
+smoke   [  83% ] 1 VUs  24.9s/30s
+
+running (0m57.5s), 1/1 VUs, 24 complete and 0 interrupted iterations
+smoke   [  86% ] 1 VUs  25.9s/30s
+
+running (0m58.5s), 1/1 VUs, 25 complete and 0 interrupted iterations
+smoke   [  90% ] 1 VUs  26.9s/30s
+
+running (0m59.5s), 1/1 VUs, 26 complete and 0 interrupted iterations
+smoke   [  93% ] 1 VUs  27.9s/30s
+
+running (1m00.5s), 1/1 VUs, 27 complete and 0 interrupted iterations
+smoke   [  96% ] 1 VUs  28.9s/30s
+
+running (1m01.5s), 1/1 VUs, 28 complete and 0 interrupted iterations
+smoke   [ 100% ] 1 VUs  29.9s/30s
+
+
+  █ THRESHOLDS 
+
+    http_req_duration{name:notifications_list}
+    ✓ 'p(95)<1000' p(95)=18.77ms
+
+    http_req_duration{name:statistics_global}
+    ✓ 'p(95)<1000' p(95)=13.78ms
+
+    http_req_duration{name:statistics_me}
+    ✓ 'p(95)<1000' p(95)=9.35ms
+
+    http_req_duration{name:statistics_trend}
+    ✓ 'p(95)<1000' p(95)=13.24ms
+
+    http_req_duration{name:tracking_create}
+    ✓ 'p(95)<1000' p(95)=76.35ms
+
+    http_req_duration{name:tracking_list}
+    ✓ 'p(95)<1000' p(95)=21.27ms
+
+    http_req_failed
+    ✓ 'rate==0' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 153     2.4602/s
+    checks_succeeded...: 100.00% 153 out of 153
+    checks_failed......: 0.00%   0 out of 153
+
+    ✓ statistics_me 2xx
+    ✓ statistics_trend 2xx
+    ✓ tracking_list 2xx
+    ✓ statistics_global 2xx
+    ✓ notifications_list 2xx
+    ✓ tracking_create 2xx
+
+    HTTP
+    http_req_duration...............: avg=145.34ms p(50)=7.14ms p(95)=1.24s   p(99)=1.7s     max=2.61s   
+      { expected_response:true }....: avg=145.34ms p(50)=7.14ms p(95)=1.24s   p(99)=1.7s     max=2.61s   
+      { name:notifications_list }...: avg=19.41ms  p(50)=8.3ms  p(95)=18.77ms p(99)=212.75ms max=287.62ms
+      { name:statistics_global }....: avg=6.7ms    p(50)=5.25ms p(95)=13.78ms p(99)=19.46ms  max=21.54ms 
+      { name:statistics_me }........: avg=6.14ms   p(50)=5.66ms p(95)=9.35ms  p(99)=11.19ms  max=11.56ms 
+      { name:statistics_trend }.....: avg=7.05ms   p(50)=5.91ms p(95)=13.24ms p(99)=17.75ms  max=19.43ms 
+      { name:tracking_create }......: avg=21.2ms   p(50)=8.91ms p(95)=76.35ms p(99)=102.79ms max=109.4ms 
+      { name:tracking_list }........: avg=8.39ms   p(50)=5.33ms p(95)=21.27ms p(99)=35.7ms   max=41.09ms 
+    http_req_failed.................: 0.00%  0 out of 233
+    http_reqs.......................: 233    3.746578/s
+
+    EXECUTION
+    iteration_duration..............: avg=1.05s    p(50)=1.03s  p(95)=1.11s   p(99)=1.31s    max=1.37s   
+    iterations......................: 29     0.466312/s
+    vus.............................: 1      min=0        max=1
+    vus_max.........................: 1      min=1        max=1
+
+    NETWORK
+    data_received...................: 197 kB 3.2 kB/s
+    data_sent.......................: 165 kB 2.7 kB/s
+
+
+
+
+running (1m02.2s), 0/1 VUs, 29 complete and 0 interrupted iterations
+smoke ✓ [ 100% ] 1 VUs  30s
+[root@37ddbed58f8b sre3_g2_beer]# 
