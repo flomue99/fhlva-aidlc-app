@@ -34,20 +34,20 @@ function thresholds() {
   const rule = (threshold) =>
     abort ? { threshold, abortOnFail: true, delayAbortEval: '10s' } : threshold;
 
-  const t = {
-    // Smoke must be clean; the other profiles use the group's error budget.
-    http_req_failed: [rule(PROFILE === 'smoke' ? 'rate==0' : `rate<${SLO.errorRate}`)],
-  };
+  const t = {};
+  // Smoke must be clean; the other profiles use the group's error budget (optional:
+  // without a top-level errorRate only the per-step error rates apply).
+  if (PROFILE === 'smoke') t.http_req_failed = [rule('rate==0')];
+  else if (SLO.errorRate !== undefined) t.http_req_failed = [rule(`rate<${SLO.errorRate}`)];
   for (const [step, slo] of Object.entries(SLO.steps || {})) {
     const rules = [];
     if (slo.p95) rules.push(rule(`p(95)<${slo.p95}`));
     if (slo.p99) rules.push(rule(`p(99)<${slo.p99}`));
     if (rules.length) t[`http_req_duration{name:${step}}`] = rules;
-
     // Optional per-step availability SLO (fraction of failed requests for this step only).
     if (slo.errorRate !== undefined && PROFILE !== 'smoke') {
       t[`http_req_failed{name:${step}}`] = [rule(`rate<${slo.errorRate}`)];
-    }     
+    }
   }
   if (PROFILE === 'newcomers') {
     // Not SLOs: always-true thresholds, only so the summary lists these steps.
@@ -196,7 +196,6 @@ export function visit(data) {
     ['notifications_list', () => http.get(`${URLS.notifications}/notifications/warnings`, params('notifications_list', token))],
   );
 
-  // step loop
   let warnings = null;
   for (const [step, call] of steps) {
     const res = call();
