@@ -53,7 +53,7 @@ spec:
       image:
         tag: v4
       env:
-        FEATURE_LIVE_WARNINGS: "true"
+        FEATURE_LIVE_WARNINGS: "false"
     statistics-service:
       image:
         tag: v2
