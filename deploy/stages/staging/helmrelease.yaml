@@ -51,7 +51,9 @@ spec:
         tag: latest
     health-notification-service:
       image:
-        tag: latest
+        tag: v4
+      env:
+        FEATURE_LIVE_WARNINGS: "true"
     statistics-service:
       image:
         tag: v2
