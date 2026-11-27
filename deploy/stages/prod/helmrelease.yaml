@@ -54,12 +54,12 @@ spec:
         tag: latest
     statistics-service:
       image:
-        tag: latest
+        tag: v2
       # --- Canary: start = enabled true + tag; promote = image.tag <- canary.tag, enabled false;
       # abort = enabled false (or revert the PR). Traffic share ~ canary.replicas : replicaCount.
       # The same block works for every service chart.
       canary:
-        enabled: true
+        enabled: false
         tag: "v2"
         replicas: 1
         env: {}
