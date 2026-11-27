@@ -51,9 +51,9 @@ spec:
         tag: latest
     health-notification-service:
       image:
-        tag: latest
+        tag: v4
       canary:
-        enabled: true
+        enabled: false
         tag: v4
         replicas: 1
         env:
