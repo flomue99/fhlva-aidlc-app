@@ -1,14 +1,14 @@
 {
-  "_comment": "G2-Meds SLOs as k6 thresholds (source: lab2_report.pdf). Top-level errorRate 0.01 = overall error rate across all steps (required by the assignment; also counts other services). Per step: errorRate from our Lab 2 SLOs (request-success-rate 99 %, successfull-acknowledge-rate 99.5 %). Latency: Lab 3 had p95 500 ms; tightened in Lab 4 to p95 15 ms (baseline ~8 ms) so the gate notices FEATURE_LIVE_WARNINGS (~31 ms). Not testable with k6: the two scheduler SLOs (not HTTP).",
+  "_comment": "G2-Meds SLOs as k6 thresholds (source: lab2_report.pdf). Top-level errorRate 0.01 = overall error rate across all steps (required by the assignment; also counts other services). Per step: errorRate from our Lab 2 SLOs (request-success-rate 99 %, successfull-acknowledge-rate 99.5 %). Latency: Lab 3 had p95 500 ms; Lab 4: p95 400 ms, between the gate baseline with the flag off (p95 199 ms, cold pods) and with it on (p95 796 ms+); 15 ms failed even the baseline. Not testable with k6: the two scheduler SLOs (not HTTP).",
   "errorRate": 0.01,
   "steps": {
     "notifications_list": {
-      "p95": 15,
+      "p95": 400,
       "errorRate": 0.01,
       "slo": "request-success-rate"
     },
     "notifications_acknowledge": {
-      "p95": 15,
+      "p95": 400,
       "errorRate": 0.005,
       "slo": "successfull-acknowledge-rate"
     }
